@@ -1,0 +1,9 @@
+streamlit
+requests
+pandas
+PyPDF2
+python-dateutil
+apscheduler
+openai
+snscrape
+st-theme

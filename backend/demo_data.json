@@ -1,0 +1,152 @@
+[
+    {
+      "Name": "Yutong (雨瞳) Xie",
+      "Current Role & Affiliation": "PhD Candidate, University of Michigan — School of Information (advised by Qiaozhu Mei)",
+      "Research Focus": ["AI Behavioral Science", "Social Simulation", "LLM Agents", "Human Behavior Modeling", "Evaluation/Alignment"],
+      "Profiles": {
+        "Homepage": "https://yutxie.com/",
+        "Google Scholar": "https://scholar.google.com/citations?user=ZiKjIeMAAAAJ",
+        "Twitter": "https://x.com/yutxie",
+        "OpenReview": "https://openreview.net/profile?id=~Yutong_Xie3",
+        "GitHub": "https://github.com/yutxie",
+        "LinkedIn": "https://www.linkedin.com/in/yutxie"
+      },
+      "Notable": "Lead author of Be.FM (open foundation models for human behavior); U-M Barbour Scholar.",
+      "Evidence Notes": "Homepage confirms PhD/advisor and research; Scholar lists publications; OpenReview lists UMich PhD profile; GitHub profile lists X/LinkedIn."
+    },
+    {
+      "Name": "Ruoyi Gao",
+      "Current Role & Affiliation": "MS Student, EECS, University of Michigan — Ann Arbor",
+      "Research Focus": ["LLMs", "NLP", "Reinforcement Learning", "Human Behavior Modeling"],
+      "Profiles": {
+        "Homepage": "",
+        "Google Scholar": "https://scholar.google.com/citations?user=EpUs_L4AAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Ruoyi_Gao1",
+        "GitHub": "",
+        "LinkedIn": ""
+      },
+      "Notable": "Co-author on Be.FM (human behavior foundation models).",
+      "Evidence Notes": "OpenReview shows UMich MS role; Scholar profile + Be.FM author list confirm activity."
+    },
+    {
+      "Name": "Jiakai Tang",
+      "Current Role & Affiliation": "PhD Student, Gaoling School of Artificial Intelligence (GSAI), Renmin University of China",
+      "Research Focus": ["LLM-based Agents", "Social Simulation", "Recommender Systems", "Behavior Modeling"],
+      "Profiles": {
+        "Homepage": "",
+        "Google Scholar": "https://scholar.google.com/citations?user=7kB-4sEAAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Jiakai_Tang1",
+        "GitHub": "https://github.com/TangJiakai",
+        "LinkedIn": ""
+      },
+      "Notable": "Co-developer/author on GenSim (LLM-driven social simulation platform).",
+      "Evidence Notes": "OpenReview lists RUC PhD; arXiv GenSim page and Scholar confirm LLM-agent simulation work."
+    },
+    {
+      "Name": "Heyang Gao",
+      "Current Role & Affiliation": "PhD Student, GSAI, Renmin University of China",
+      "Research Focus": ["LLM-based Agents", "Causal Discovery", "Social Simulation", "Evaluation"],
+      "Profiles": {
+        "Homepage": "https://patrickgao2003.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=StE3yPwAAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Heyang_Gao1",
+        "GitHub": "",
+        "LinkedIn": ""
+      },
+      "Notable": "Work on agent-based social simulators (e.g., Yulan-OneSim) and LLM-agent evaluation.",
+      "Evidence Notes": "OpenReview confirms RUC PhD; Scholar lists Yulan-OneSim and related works; ORCID shows RUC PhD (2023–2028)."
+    },
+    {
+      "Name": "Lei Wang",
+      "Current Role & Affiliation": "PhD Student, GSAI, Renmin University of China (advised by Xu Chen)",
+      "Research Focus": ["LLM-based Agents", "User Behavior Simulation", "Recommender Systems", "Role-Playing/Simulation"],
+      "Profiles": {
+        "Homepage": "https://paitesanshi.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=E6NenUwAAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Lei_Wang46",
+        "GitHub": "https://github.com/Paitesanshi",
+        "LinkedIn": ""
+      },
+      "Notable": "Author of 'User Behavior Simulation with LLM-based Agents'; research on role-playing agents.",
+      "Evidence Notes": "Homepage confirms PhD/advisor; OpenReview lists the simulation papers; Scholar shows agent/RS publications."
+    },
+    {
+      "Name": "Xinnong Zhang",
+      "Current Role & Affiliation": "PhD Student, Fudan University — Data Intelligence & Social Computing (DISC) Lab (advised by Zhongyu Wei)",
+      "Research Focus": ["Social Simulation", "LLM Agents", "Computational Social Science", "Benchmarks (AgentSense)"],
+      "Profiles": {
+        "Homepage": "https://lishi905.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=0wFnJ-0AAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Xinnong_Zhang1",
+        "GitHub": "https://github.com/Lishi905",
+        "LinkedIn": ""
+      },
+      "Notable": "Lead/co-author on SocioVerse (world model for social simulation) and AgentSense (NAACL 2025).",
+      "Evidence Notes": "Homepage confirms role/advisor; SocioVerse repo and arXiv page list authors; OpenReview lists Fudan PhD."
+    },
+    {
+      "Name": "Jiayu Lin",
+      "Current Role & Affiliation": "PhD Student, Fudan University (MS 2022–2024 at Fudan; BS at Renmin University)",
+      "Research Focus": ["Social Simulation", "Computational Argumentation", "Agent Benchmarks", "Computational Social Science"],
+      "Profiles": {
+        "Homepage": "",
+        "Google Scholar": "https://scholar.google.com/citations?user=zm_iLVEAAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Jiayu_Lin2",
+        "GitHub": "",
+        "LinkedIn": ""
+      },
+      "Notable": "Co-author on SocioVerse and AgentSense; work on argumentation + social sim.",
+      "Evidence Notes": "OpenReview shows Fudan PhD timeline; Scholar records; SocioVerse arXiv and AgentSense repo list authors."
+    },
+    {
+      "Name": "Xinyi Mou",
+      "Current Role & Affiliation": "PhD Student, Fudan University — DISC Lab (advised by Zhongyu Wei)",
+      "Research Focus": ["Social Simulation", "LLM Agents", "Computational Social Science", "Political Actor Modeling"],
+      "Profiles": {
+        "Homepage": "https://xymou.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=nMkkDWYAAAAJ",
+        "Twitter": "",
+        "OpenReview": "https://openreview.net/profile?id=~Xinyi_Mou1",
+        "GitHub": "https://github.com/xymou",
+        "LinkedIn": ""
+      },
+      "Notable": "Lead on HiSim (LLM + ABM hybrid social movement simulator); co-author of AgentSense (NAACL 2025).",
+      "Evidence Notes": "Homepage confirms role/interests; GitHub (HiSim, UPPAM) and project page; AgentSense code repo; OpenReview profile."
+    },
+    {
+      "Name": "Hanjia Lyu",
+      "Current Role & Affiliation": "PhD Student, University of Rochester — Computer Science (advised by Jiebo Luo)",
+      "Research Focus": ["Computational Social Science", "Social Media Analysis", "LLM Agents", "Bias/Audits"],
+      "Profiles": {
+        "Homepage": "https://brucelyu17.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=tPhwyYsAAAAJ",
+        "Twitter": "https://x.com/bruce_lyu17",
+        "OpenReview": "https://openreview.net/profile?id=~Hanjia_Lyu1",
+        "GitHub": "https://github.com/brucelyu17",
+        "LinkedIn": "https://www.linkedin.com/in/hanjia-lyu-901348128"
+      },
+      "Notable": "Co-author of SoMeLVLM (ACL Findings 2024); works on social-media-focused LLM evaluation.",
+      "Evidence Notes": "Homepage confirms PhD/advisor; Scholar/ACL/Repos confirm output; OpenReview profile; LinkedIn/Twitter present."
+    },
+    {
+      "Name": "Yun-Shiuan (Sean) Chuang",
+      "Current Role & Affiliation": "PhD Student (Cognitive Science) & MS (CS), University of Wisconsin–Madison",
+      "Research Focus": ["Opinion Dynamics", "LLM Agents", "Multi-Agent Simulation", "Human-AI Interaction"],
+      "Profiles": {
+        "Homepage": "https://yunshiuanchuang.github.io/",
+        "Google Scholar": "https://scholar.google.com/citations?user=tcR4ZjQAAAAJ",
+        "Twitter": "https://twitter.com/SeanChuang4",
+        "OpenReview": "https://openreview.net/profile?id=~Yun-Shiuan_Chuang1",
+        "GitHub": "https://github.com/yunshuanchuang",
+        "LinkedIn": "https://www.linkedin.com/in/yunshiuan/"
+      },
+      "Notable": "ICLR-area work on LLM-agent opinion dynamics; social simulation with LLMs.",
+      "Evidence Notes": "Homepage confirms current degrees; Scholar/OpenReview list publications; Twitter/GitHub/LinkedIn are active."
+    }
+  ]
