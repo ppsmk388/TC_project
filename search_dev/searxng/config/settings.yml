@@ -1,0 +1,75 @@
+server:
+  # 关掉限流器
+  limiter: false
+  public_instance: false
+  method: "POST"
+  bind_address: "0.0.0.0"
+  port: 8888
+  secret_key: "changeme-very-secret-key"   # 必须要有个字符串，不然报错
+
+botdetection:
+  # 完全禁用 bot 检测
+  enabled: false
+
+search:
+  ban_time_on_fail: 0
+  max_ban_time_on_fail: 0
+  suspended_times: {}
+  formats: [html, json]
+
+outgoing:
+  request_timeout: 6.0
+  max_request_timeout: 15.0
+  pool_connections: 50
+  pool_maxsize: 20
+  enable_http2: true
+
+engines:
+  - name: google
+    engine: google
+    shortcut: go
+  - name: brave
+    engine: brave
+    shortcut: br
+    time_range_support: true
+    paging: true
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+  - name: bing
+    engine: bing
+    shortcut: bi
+  - name: startpage
+    engine: startpage
+    shortcut: sp
+    startpage_categ: web
+    categories: [general, web]
+  - name: arxiv
+    engine: arxiv
+    shortcut: arx
+  - name: crossref
+    engine: crossref
+    shortcut: cr
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    categories: [general]
+    display_type: ["infobox"]
+  - name: wikidata
+    engine: wikidata
+    shortcut: wd
+    categories: [general]
+    display_type: ["infobox"]
+  - name: github
+    engine: github
+    shortcut: gh
+  - name: google scholar
+    engine: google_scholar
+    shortcut: gos
+
+doi_resolvers:
+  oadoi.org: 'https://oadoi.org/'
+  doi.org: 'https://doi.org/'
+  sci-hub.se: 'https://sci-hub.se/'
+
+default_doi_resolver: 'oadoi.org'

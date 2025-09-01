@@ -6,10 +6,6 @@ Contains all constants, configurations, and default values
 import os
 from typing import Dict, List
 
-# NOTE: TO BE DETELE:
-
-
-
 # ============================ OUTPUT & STORAGE CONFIG ============================
 
 # Output directory (fixed)
@@ -29,6 +25,7 @@ SEARXNG_PAGES = 3          # Pages per query
 # LOCAL_OPENAI_MODEL = "/root/autodl-tmp/model_folder/Qwen/Qwen3-8B-Base/"
 LOCAL_OPENAI_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 LOCAL_OPENAI_MODEL = "qwen3-14b"
+LOCAL_OPENAI_API_KEY = "sk-a713f7ae790d4ed086eff706e1cc0bb4"
 
 # ============================ SEARCH & PROCESSING PARAMETERS ============================
 

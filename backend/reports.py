@@ -1,10 +1,6 @@
 from typing import List, Dict, Any, Optional
 import requests
 
-from .config import S2_BASE, S2_HEADERS
-from .semantic_scholar import s2_get_author
-from .llm import llm_chat
-
 
 def humanize_list(items: List[str], max_items: int = 5) -> str:
     items = items[:max_items]
@@ -41,6 +37,7 @@ def get_arxiv_recent(name_query: str, max_results: int = 10) -> List[Dict[str, A
 def build_achievement_report(person_name: str) -> str:
     best_author = None
     try:
+        return "FAKE"
         r = requests.get(
             f"{S2_BASE}/author/search",
             params={"query": person_name, "limit": 1, "fields": "name,affiliations,homepage,authorId"},
@@ -73,7 +70,6 @@ def build_achievement_report(person_name: str) -> str:
         "Keep it factual and concise (<=250 words)."
     )
     user = "\n".join(lines) if lines else f"No signals available for {person_name}."
-    summary = llm_chat(system, user)
-    return summary
+    return "SB"
 
 

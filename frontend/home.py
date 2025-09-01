@@ -7,25 +7,29 @@ def render_home_page():
     
     # Stats section with clickable navigation buttons
     col1, col2, col3, col4 = st.columns(4)
-    
+
     with col1:
-        if st.button("🔍 Smart Search\n\nAI-powered candidate discovery", key="nav_smart_search", use_container_width=True, help="Click to go to Targeted Search"):
+        if st.button("🔍 Targeted Search\n\nAI-powered candidate discovery", key="nav_smart_search", use_container_width=True, help="Click to go to Targeted Search"):
             st.session_state.current_page = "🔍 Targeted Search"
+            st.session_state.page_changed = True
             st.rerun()
-    
+
     with col2:
-        if st.button("📊 Analytics\n\nPerformance insights", key="nav_analytics", use_container_width=True, help="Click to go to Achievement Report"):
+        if st.button("📊 Achievement Analytics\n\nGroup Performance insights", key="nav_analytics", use_container_width=True, help="Click to go to Achievement Report"):
             st.session_state.current_page = "📊 Achievement Report"
+            st.session_state.page_changed = True
             st.rerun()
-    
+
     with col3:
-        if st.button("📄 Evaluation\n\nResume analysis", key="nav_evaluation", use_container_width=True, help="Click to go to Resume Evaluation"):
+        if st.button("📄 Resume Evaluation\n\nTalent Resume analysis", key="nav_evaluation", use_container_width=True, help="Click to go to Resume Evaluation"):
             st.session_state.current_page = "📄 Resume Evaluation"
+            st.session_state.page_changed = True
             st.rerun()
-    
+
     with col4:
-        if st.button("📈 Trends\n\nMarket intelligence", key="nav_trends", use_container_width=True, help="Click to go to Trend Radar"):
+        if st.button("📈 Trends\n\nIndustry intelligence", key="nav_trends", use_container_width=True, help="Click to go to Trend Radar"):
             st.session_state.current_page = "📈 Trend Radar"
+            st.session_state.page_changed = True
             st.rerun()
     
     # Feature cards with better styling

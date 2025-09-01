@@ -7,20 +7,12 @@ import json
 from typing import Optional, Dict, Any
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
+import config
 import utils
 import schemas
 from langchain_community.chat_models.tongyi import ChatTongyi
-import config
-import streamlit as st
 
 # ============================ LLM CONFIGURATION ============================
-
-def get_api_key_from_session() -> Optional[str]:
-    """Get OpenAI API key from Streamlit session state"""
-    try:
-        return st.session_state.get("openai_api_key", "")
-    except:
-        return None
 
 # def get_llm(role: str, temperature: float = 0.4) -> ChatOpenAI:
 #     """Get configured LLM instance for specific role"""
@@ -34,35 +26,12 @@ def get_api_key_from_session() -> Optional[str]:
 #     )
     
     
-def get_llm(role: str, temperature: float = 0.4, api_key: str = None) -> ChatTongyi:
-    """Get configured LLM instance for specific role
-    
-    Args:
-        role: The role/context for the LLM (affects max_tokens)
-        temperature: Temperature setting for response randomness
-        api_key: Optional explicit API key. If not provided, will try to get from session state.
-    
-    Returns:
-        ChatTongyi: Configured LLM instance
-        
-    Raises:
-        ValueError: If no API key is available (user must enter key in sidebar)
-    """
+def get_llm(role: str, temperature: float = 0.4) -> ChatTongyi:
+    """Get configured LLM instance for specific role"""
     max_tokens = config.LLM_OUT_TOKENS.get(role, 2048)
-    
-    # Use provided API key if available, otherwise try to get from session state
-    if api_key:
-        api_key_to_use = api_key
-    else:
-        session_api_key = get_api_key_from_session()
-        if session_api_key:
-            api_key_to_use = session_api_key
-        else:
-            raise ValueError("OpenAI API key is required. Please enter your API key in the sidebar settings.")
-    
     return ChatTongyi(
         model=config.LOCAL_OPENAI_MODEL,
-        api_key=api_key_to_use,
+        api_key=config.LOCAL_OPENAI_API_KEY,
         streaming=False,
         temperature=temperature,
         max_tokens=max_tokens,

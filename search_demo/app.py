@@ -36,6 +36,107 @@ st.session_state.setdefault("openai_api_key", "")
 st.session_state.setdefault("search_api_key", "")
 st.session_state.setdefault("twitter_bearer", "")
 
+
+# -----------------------------
+# Rubric config (weights & anchors)
+# -----------------------------
+RUBRIC_WEIGHTS = {
+    "academic_background": 0.15,
+    "research_output": 0.30,
+    "research_alignment": 0.20,
+    "technical_skills": 0.15,
+    "recognition_impact": 0.10,
+    "communication_collaboration": 0.05,
+    "initiative_independence": 0.05,
+}
+
+RUBRIC_ANCHORS = {
+    # Use these anchors as mental reference; the UI below shows a compact version
+    # 10 / 8 / 6 / 4 / 2 = outstanding / strong / solid / weak / poor
+    "academic_background": {
+        10: "Top lab/university, renowned advisor, MS/PhD stage, top 10% grades",
+        8:  "Tier-1/strong Tier-2, solid advisor, top 25% grades",
+        6:  "Mainstream program, adequate advisor/curriculum",
+        4:  "Ordinary program or cross-domain weak match",
+        2:  "Clear mismatch (program/advisor/coursework)",
+    },
+    "research_output": {
+        10: "Recent 1st-author top-venue (Oral/Spotlight/Best) + active pipeline + reproducible assets",
+        8:  "Top-venue author (not necessarily 1st) or multiple strong preprints",
+        6:  "Workshops/2nd-tier or 1–2 solid preprints",
+        4:  "Scattered reports; weak reproducibility",
+        2:  "No meaningful outputs",
+    },
+    "research_alignment": {
+        10: "Highly aligned with MSRA; original framing & convincing evidence",
+        8:  "Good alignment; can extend frontier work; clear next steps",
+        6:  "Broadly aligned; limited originality/focus",
+        4:  "Weak alignment; vague problem/method",
+        2:  "Off-track to team priorities",
+    },
+    "technical_skills": {
+        10: "Independent E2E pipeline; multi-GPU/distributed; engineering (CI/containers) sound",
+        8:  "Independent on most tasks; pragmatic efficiency know-how",
+        6:  "Implements under guidance; can modify open-source",
+        4:  "Mostly API-level usage; weak scripts/repro",
+        2:  "Insufficient coding/experiment skills",
+    },
+    "recognition_impact": {
+        10: "High-prestige awards; top-venue reviewer/organizer; impactful OSS/tutorials",
+        8:  "Scholarships/contests; repeated reviewing; visible blog/docs",
+        6:  "Some local awards; occasional reviewing",
+        4:  "Sparse recognition",
+        2:  "None",
+    },
+    "communication_collaboration": {
+        10: "Clear writing; strong talks; organizes multi-party work",
+        8:  "Good prose/slides; solid Q&A",
+        6:  "Understandable but needs editing",
+        4:  "Unclear or weak structure",
+        2:  "Blocks collaboration",
+    },
+    "initiative_independence": {
+        10: "Self-driven problem finding; consistent iteration & retrospectives",
+        8:  "Pushes tasks quickly after light guidance",
+        6:  "Executes plan; depends on external drive",
+        4:  "Slow progress; stalls on blockers",
+        2:  "Low initiative",
+    },
+}
+
+BONUS_MALUS = {
+    "spotlight_or_oral": 1,            # add to 100-point total
+    "best_paper_or_nomination": 2,
+    "high_quality_open_source": 1,
+    "direct_project_fit": 1,
+    "integrity_issue": -999,           # auto-reject
+    "exaggeration_or_unreproducible": -2,
+    "logistics_mismatch": -3,
+}
+
+DECISION_BANDS = [
+    {"label": "A — Strong Recommend", "min": 85, "max": 100},
+    {"label": "B — Recommend",         "min": 70, "max": 84},
+    {"label": "C — Consider/Waitlist", "min": 55, "max": 69},
+    {"label": "D — Decline",           "min": 0,  "max": 54},
+]
+
+def compute_weighted_score(scores: dict, weights: dict, bonus_points: int = 0) -> tuple[float, str]:
+    """
+    scores: dict of 1–10 integers per dimension
+    returns (final_score_100_scale, decision_band_label)
+    """
+    base_10 = sum(scores[k] * weights[k] for k in weights)             # 0–10
+    base_100 = base_10 * 10                                            # 0–100
+    total_100 = base_100 + bonus_points
+    # cap to [0,100]
+    total_100 = max(0, min(100, total_100))
+
+    band = next((b["label"] for b in DECISION_BANDS if b["min"] <= total_100 <= b["max"]), "Unclassified")
+    return round(total_100, 1), band
+
+
+
 # Update session state with current values
 if openai_key:
     st.session_state.openai_api_key = openai_key
@@ -132,6 +233,7 @@ elif page == "📄 Resume Evaluation":
 **Bonus/Malus (applied to 100-point total)**
 - +1 Oral/Spotlight; +2 Best Paper/Nomination  
 - +1 High-quality open-source; +1 Direct project fit  
+- −2 Unreproducible/exaggerated claims; −3 logistics mismatch  
 - **Integrity issues → auto-reject**
 """)
 
@@ -164,7 +266,12 @@ elif page == "📄 Resume Evaluation":
                 resume_text = f"Homepage: {homepage_url}"
 
         st.subheader("Evaluation Parameters")
-        position_context = st.text_area("Role requirements (optional)", placeholder="Describe the role to tailor the evaluation...")
+        position_context = st.text_area(
+            "Role requirements (optional):",
+            placeholder="Describe the role to tailor the evaluation...",
+            height=100,
+            help="Provide specific role requirements to tailor the evaluation (optional)"
+        )
         if (resume_text or input_method == "Homepage URL") and st.button("🔍 Evaluate Candidate", type="primary"):
             demo_mode = st.checkbox("Show demo result (Linxin Song example)", value=True, key="demo_mode")
 
@@ -358,7 +465,6 @@ elif page == "📄 Resume Evaluation":
 
         else:
             st.info("Choose an input method and click **Evaluate Candidate** to start")
-
 
 elif page == "📈 Trend Radar":
     apply_trend_radar_styles()

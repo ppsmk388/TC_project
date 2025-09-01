@@ -1,6 +1,5 @@
 from typing import List, Dict, Any
 
-from .llm import llm_chat
 
 
 def fetch_tweets(usernames: List[str], n_per_user: int = 20) -> List[Dict[str, Any]]:
@@ -31,6 +30,6 @@ def summarize_trends(tweets: List[Dict[str, Any]]) -> str:
         "You are an analyst. Summarize recent themes, emerging topics, and any named entities (people, venues, datasets) from the tweets. "
         "Return: 1) 5 bullet trends with short evidence snippets; 2) Watchlist (3-5 items); 3) One-paragraph take."
     )
-    return llm_chat(system, corpus)
+    return "FAKE"
 
 

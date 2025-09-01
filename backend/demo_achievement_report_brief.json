@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Jiarui Ji",
+    "homepage": "https://ji-cather.github.io/homepage/",
+    "affiliation": "Gaoling School of AI, Renmin University of China (M.E.); Incoming Ph.D. (Sep 2025)",
+    "focus": [
+      "LLM-based Agents",
+      "Social Simulation",
+      "Graph Generation"
+    ],
+    "summary": "Works on LLM multi-agent systems and dynamic/text-attributed graph generation, aiming to bridge agent interaction dynamics with scalable graph generative modeling. Early publications at ACL Findings 2025 and EMNLP Findings 2024 demonstrate a strong trajectory, with ongoing work extending to dynamic TAG prediction and benchmarking.",
+    "highlights": [
+      "ACL-Findings 2025: LLM multi-agent systems as scalable graph generative models",
+      "EMNLP-Findings 2024: Scarce resource allocation via LLM-based agents"
+    ]
+  },
+  {
+    "name": "Xinyi Mou",
+    "homepage": "https://xymou.github.io/",
+    "affiliation": "Fudan University (DISC Lab), Ph.D. student",
+    "focus": [
+      "LLM-driven Social Simulation",
+      "Computational Social Science",
+      "Key Figure Modeling"
+    ],
+    "summary": "Researches LLM agents for social simulation and socio-political analysis, emphasizing communication protocols, benchmarking, and large-scale societal modeling. Outputs span EMNLP/NAACL/ACL-Findings and TIST, reflecting both methodological contributions (e.g., EcoLANG, AgentSense) and applied studies in media and political domains.",
+    "highlights": [
+      "EMNLP-Findings 2025: EcoLANG for agent communication",
+      "NAACL 2025: AgentSense benchmarking social intelligence"
+    ]
+  },
+  {
+    "name": "Zengqing Wu",
+    "homepage": "https://wuzengqing001225.github.io/",
+    "affiliation": "Kyoto University (M.Eng.); Research Associate, Osaka University",
+    "focus": [
+      "Agent-Based Modeling with LLMs",
+      "Computational Social Science"
+    ],
+    "summary": "Studies emergent behaviors in LLM-agent systems and develops simulations for complex social phenomena, including urban mobility generation. Publications at EMNLP 2024 and NeurIPS 2024, plus service at major venues, underscore a growing profile in agent-based modeling and empirical LLM evaluation.",
+    "highlights": [
+      "EMNLP 2024 Findings: Spontaneous cooperation of competing LLM agents",
+      "NeurIPS 2024: LLM agents for personal mobility generation"
+    ]
+  },
+  {
+    "name": "Jinsook Lee",
+    "homepage": "https://jinsook-jennie-lee.github.io/",
+    "affiliation": "Cornell University, Ph.D. candidate (Information Science)",
+    "focus": [
+      "AI in Education",
+      "Evaluation & Fairness",
+      "Computational Social Science"
+    ],
+    "summary": "Focuses on evaluating AI in high-stakes educational contexts, analyzing policy impacts and bias while comparing human and LLM-generated texts. Work at EAAMO and BJET highlights evidence-driven insights for admissions and learning analytics, complemented by cross-disciplinary collaborations.",
+    "highlights": [
+      "EAAMO 2024: Impact of ending affirmative action on diversity/merit",
+      "BJET 2024: Life cycle of LLMs in education and bias"
+    ]
+  }
+]

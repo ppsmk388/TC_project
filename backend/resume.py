@@ -3,7 +3,6 @@ import io
 import json
 from PyPDF2 import PdfReader
 
-from .llm import llm_chat
 
 
 def extract_pdf_text(file_bytes: bytes) -> str:
@@ -75,7 +74,7 @@ Return JSON with:
     prompt = rubric + "\n" + json.dumps(data)[:40000]
     
     try:
-        raw = llm_chat("You output strict JSON following the MSRA evaluation format.", prompt, temperature=0.1)
+        raw = "Fake"
         obj = json.loads(raw)
         return obj
     except Exception:
